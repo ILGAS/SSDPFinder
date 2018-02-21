@@ -236,6 +236,7 @@ function usual(&$out) {
 */
  function uninstall() {
   SQLExec('DROP TABLE IF EXISTS ssdp_devices');
+  unsubscribeFromEvent($this->name, 'HOURLY');  // удаление модуля
   parent::uninstall();
  }
 /**
